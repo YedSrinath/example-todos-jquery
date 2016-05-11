@@ -2,7 +2,7 @@
 
   var Utils = {
     _s4: function() {
-      return Math.floor(Math.random() * 0x10000).toString(16); 
+      return Math.floor(Math.random() * 0x10000).toString(16);
     },
 
     uuid: function() {
@@ -23,7 +23,7 @@
     init: function() {
       this.todoTemplate = hbs.compile($('#todo-items').html());
       this.todos = Utils.store('todos');
-     
+
       this.events();
       this.render();
     },
@@ -62,7 +62,7 @@
       var $input = $(e.target).closest('li').addClass('active').find('.edit');
       $input.val($input.val()).focus();
     },
-  
+
     editKeyup: function(e) {
       var val = $(e.target).val();
       if(e.which !== 13) {
@@ -78,7 +78,7 @@
     toggle: function(e) {
       var idx = this._index(e.target);
       this.todos[idx].completed = !this.todos[idx].completed;
-      
+
       this.render();
     },
 
